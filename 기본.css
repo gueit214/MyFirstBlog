@@ -38,20 +38,37 @@ body{
 /* footer */
 .footer{
     border-top:1px solid gray;
-    height:100px;
-    
+    height:200px;
+    display:flex;
+}
+.background_music{
+    width:50%;
+}
+.footer .inner{
+    width:50%;
+    flex-direction
+}
+.inner1{
+    height:140px;
+    display:flex;
     justify-content:flex-end;
-    align-items:center;
+    align-items:flex-end;
+    margin-right:10px;
 }
-.footer .inner1 .util {
+
+.inner1 .util{
+    display:flex;
+    justify-content:flex-end;
+    align-items:flex-end;
+}
+.inner2{
     height:60px;
-    width:100%;
     display:flex;
-    margin:10px auto auto 10px;
     
+    margin-right:10px;
 }
-.footer .inner2{
-    height:40px;
-    display:flex;
-    margin:auto auto 10px 10px;
+
+.inner2 .copyrights{
+    width:100%;
+    text-align:right;
 }
