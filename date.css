@@ -78,18 +78,18 @@ body{
 .footer{
     border-top:1px solid gray;
     height:100px;
-    
-    justify-content:flex-end;
-    align-items:center;
 }
-.footer .inner1 .util {
-    height:60px;
-    width:100%;
-    display:flex;
-    margin:10px auto auto 10px;
-}
-.footer .inner2{
+.inner1{
     height:40px;
     display:flex;
-    margin:auto auto 10px 10px;
+    justify-content:flex-end;
+    align-items:center;
+    margin-right:30px;
+    margin-top:10px;
+}
+.inner2{
+    height:60px;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
 }
