@@ -7,10 +7,9 @@
     padding:0px;
     color:#000;
 }
-
 /* body */
 body{
-    background:rgb(165, 174, 177);
+    font-family: Consolas, sans-serif;
 }
 .wrap{
     width:100%;
@@ -18,44 +17,50 @@ body{
 }
 /* header */
 .header{
-    width:100%;
-    height:auto;
-    padding-bottom:10px;
-    border:1px solid rgb(185, 154, 154);
-    background:rgb(165, 220, 241)
+    height:160px;
+    border-bottom:1px solid rgb(185, 154, 154);
 }
 .header .inner{
-    height:120px;
-    width:100%;
+    height:100%;
     display:flex;
     justify-content:center;
     align-items:center;
     font-size:25px;
 }
-.header .util {
-    height:40px;
-    width:100%;
-    display:flex;
-    justify-content:flex-end;
+.header .inner a h1:hover{
+    transition:1s;
+    transform:scale(1.2);
 }
+
 /* container */
-.container{
-    background: pink;
-}
-.container .content0{
+.content0{
     width:100%;
     height:80px;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:20px;
+    font-size:30px;
+
+    width:100%;
 }
-.container .contents{
+.content0 .title{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:400px;
+    height:70px;
+    border:1px dashed rgb(228, 188, 188);
+    border-radius:5px;
+}
+.content0 .title h1{
+    color:rgb(248, 116, 138);
+}
+.contents{
     width:100%;
     height:1000px;
     margin:10px 0px 0px 10px;
 }
-.container .contents div{
+.contents div{
     height:50px;
     margin-top:5px;
     display:flex;
@@ -64,16 +69,27 @@ body{
     border:1px solid rgb(233, 213, 213);
     border-radius:5px;
 }
-.container .contents .content1 h2{
+.contents .content1 h2{
     background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
     -webkit-background-clip: text;
     color: transparent;
 }
 /* footer */
 .footer{
-    height:80px;
-    background:#624;
-    display:flex;
+    border-top:1px solid gray;
+    height:100px;
+    
     justify-content:flex-end;
     align-items:center;
+}
+.footer .inner1 .util {
+    height:60px;
+    width:100%;
+    display:flex;
+    margin:10px auto auto 10px;
+}
+.footer .inner2{
+    height:40px;
+    display:flex;
+    margin:auto auto 10px 10px;
 }
