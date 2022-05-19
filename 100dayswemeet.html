@@ -83,23 +83,23 @@
             <div class="text"></div>
           </div>
           <div class="dots">
-            <button onclick="movebutton('0''0')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','1')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','2')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','3')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','4')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','5')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','6')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','7')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','8')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','9')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','10')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','11')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','12')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','13')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','14')"><span class="dot0"></span></button>
-            <button onclick="movebutton('0','15')"><span class="dot0"></span></button>
-          </div>
+            <button onclick="movebutton(0,0)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,2)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,1)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,3)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,4)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,5)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,6)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,7)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,8)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,9)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,10)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,11)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,12)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,13)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,14)"><span class="dot0"></span></button>
+            <button onclick="movebutton(0,15)"><span class="dot0"></span></button>
+          </div>        
         </section>
         <section class="content1">
           <div class="content1_1">
@@ -110,7 +110,7 @@
             </div>
             <div class="img1_1">
               <div class="startbutton1_1">
-                <button onclick="showSlide1('1')">❤️</button>
+                <button onclick="showSlide(1)">❤️</button>
               </div>
               <div class="slide1 fade">
                 <img src="image/100dayswemeet/mychoice8.jpg" style="width:94%">
@@ -122,9 +122,9 @@
                 <img src="image/100dayswemeet/mychoice2.jpg" style="width:94%">
               </div>
               <div class="dots">
-                <button onclick="movebutton('1','0')"><span class="dot1"></span></button>
-                <button onclick="movebutton('1','1')"><span class="dot1"></span></button>
-                <button onclick="movebutton('1','2')"><span class="dot1"></span></button>
+                <button onclick="movebutton(1,0)"><span class="dot1"></span></button>
+                <button onclick="movebutton(1,1)"><span class="dot1"></span></button>
+                <button onclick="movebutton(1,2)"><span class="dot1"></span></button>
               </div>
             </div>
           </div>
@@ -166,29 +166,36 @@
     </div>
 </div>
 <br>
-s
-<script>
-  let slideIndex = 0;
 
+<script>
+  let slideIndex = [0,0];
   showSlide(0);
-  
   function showSlide(n) {
     let i;
+    slideIndex[0]++;
+
+    console.log(slideIndex[0]);
+
+    if(n>0){
+      let button=document.getElementsByClassName('startbutton1_'+n);
+      button[0].style.display="none";                                    //button 없애기
+    }
+
     let slides = document.getElementsByClassName("slide"+n);
-    let dots = document.getElementsByClassName("dot"+n);
     for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";  
     }
-    console.log(slideIndex);
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
+    if (slideIndex[0] > slides.length) {slideIndex[0] = 1;}    
+    slides[slideIndex[0]-1].style.display = "block";  
+    
+    let dots = document.getElementsByClassName("dot"+n);
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-    if(slideIndex<slides.length) setTimeout(showSlide('0'), 1000); 
-    
+    dots[slideIndex[0]-1].className += " active";
+
+    if(slideIndex[0]<slides.length) setTimeout(() => showSlide(n), 1000);
+    else slideIndex[0]=0;
   }
 
   function movebutton(n,m){
@@ -206,31 +213,6 @@ s
     slides[m].style.display = "block";  
   }
 
-function showSlide1(n) {
-
-    let i;
-    let button=document.getElementsByClassName('startbutton1_'+n);
-    button[0].style.display="none";                                    //button 없애기
-
-    let slides = document.getElementsByClassName("slide"+n);
-    for (i = 0; i < slides.length; i++) {                              //slide 넘기기
-      slides[i].style.display = "none";  
-    }
-    slideIndex1++;
-    if (slideIndex1 > slides.length) {
-      slideIndex1 = 1;
-    }   
-    slides[slideIndex1-1].style.display = "block";  
-
-    let dots = document.getElementsByClassName("dot"+n);
-    for (i = 0; i < dots.length; i++) {                                //dot 넘기기
-      dots[i].className = dots[i].className.replace(" active", "");   
-    }
-    dots[slideIndex1-1].className += " active";
-    console.log(slideIndex1);
-    if(slideIndex1<slides.length) setTimeout(showSlide1(n), 1000);         //다음 함수 실행
-  }
-  
   
     
 
