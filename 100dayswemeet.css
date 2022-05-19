@@ -35,6 +35,7 @@ body{
   background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
   -webkit-background-clip: text;
   color: transparent;
+  font-size:150%;
 }
 
 /* container slidehosw-container */
@@ -64,7 +65,7 @@ body{
   align-items:center;
 }
 
-.dot0{
+.dot0, .dot1{
   height: 15px;
   width: 15px;
   margin: 0 2px;
@@ -76,69 +77,73 @@ body{
 .active {
   background-color: #e27de6;
 }
-.content0 .dots button{
+.dots button{
   border:none;
+  cursor:pointer;
+  background:none;
 }
 
 /* content1 */
 .content1{
+  margin-top:200px;
   height:1800px;
-  background:rgb(199, 133, 133);
+  background:rgb(226, 192, 192);
 }
 /* content1_1 */
 .content1_1{
   display:flex;
+  width:100%;
+  height:400px;
 }
-
-.content1_1_1{
-  display:flex;
+.content1_1 .text1_1{
   width:50%;
-}
-.content1_1_1 .text1_1_1{
-  width:50%;
-  height:700px;
+  height:900px;
   font-size:30px;
   text-align:center;
-  
   display:flex;
   justify-content:center;
-  align-items:center;
+  margin-top:20px;
 }
-.content1_1_1 .img1_1_1{
-  
+.content1_1 .img1_1{
   display:flex;
   justify-content: center;
-  align-items: center;
+  height:100%;
   width:50%;
+  flex-direction:column;
+  margin-top:80px;
 }
 
-.content1_1_1 .text1_1_1 p{
-  width:70%;
-  height:70%;
+.content1_1 .text1_1 p{
+  width:90%;
+  height:50%;
   background:rgb(239, 240, 176);
   border-radius:10px;
 }
 
-
-.content1_1_1 .startbutton1_1_1{
-  width:100%; height:100%;
+.content1_1 .startbutton1_1{
+  width:100%; 
+  height:100%;
   display:flex;
   justify-content: center;
-  align-items: center;
+  
+  
 }
-.content1_1_1 .startbutton1_1_1 button{
-  width:70%; height:50%;
+.content1_1 .startbutton1_1 button{
+  height:80%; width:80%;
   border-radius:50px;
-  background:rgb(255, 255, 255);
-  color:rgb(0, 0, 0);
   border:none;
   line-height:200px;
   font-size:1000%;
 }
-
-
+.content1_1 .dots{
+  margin-bottom:40px;
+  display:flex;
+  justify-content: center;
+}
+.content1_1 .dots .dot1{
+  margin-right:10px;
+}
 /* content1_2 */
-
 
 
 
