@@ -26,7 +26,7 @@ function showSlide(n) {
   dots[slideIndex[0] - 1].className += " active";
   if (slideIndex[0] < slides.length) {
     if (n == 0) setTimeout(() => showSlide(n), 2000);
-    else setTimeout(() => showSlide(n), 1000);
+    else setTimeout(() => showSlide(n), 2000);
   } else slideIndex[0] = 0;
 }
 
