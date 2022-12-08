@@ -14,5 +14,4 @@
 
 ## 📷 시연 영상
 
-ㄴ
 <img src="https://user-images.githubusercontent.com/62178788/206398905-3f5f321e-344e-4a50-ab87-7c500ec47165.gif" width="600px">
